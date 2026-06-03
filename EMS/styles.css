@@ -1,0 +1,353 @@
+/* ===== RESET ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f6f9;
+    color: black;;
+    line-height:1.6;
+}
+
+/* ===== HEADER ===== */
+
+header{
+    background:#0066cc;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    margin-bottom:10px;
+}
+
+/* ===== NAVIGATION ===== */
+
+
+/* .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+} 
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    
+}
+
+.logo img{
+    width:75px;
+    height:75px;
+    border-radius: 100%;
+}*/
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:8px 12px;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    background:white;
+    color:#0066cc;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#0066cc;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+/* ===== BUTTONS ===== */
+
+button,
+.btn{
+    background:#0066cc;
+    color:white;
+    border:solid;
+    padding:12px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover,
+.btn:hover{
+    background:#000912;
+}
+
+/* ===== FORMS ===== */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+label{
+    font-weight:bold;
+}
+
+/* ===== LOGIN PAGE ===== */
+
+.login-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:80vh;
+}
+
+.login-card{
+    background:white;
+    width:400px;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.login-card h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.links{
+    text-align:center;
+    margin-top:15px;
+}
+
+.links a{
+    color:#0066cc;
+    text-decoration:none;
+}
+
+/* ===== REGISTER PAGE ===== */
+
+.register-container{
+    max-width:700px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ===== DASHBOARD ===== */
+
+.welcome{
+    text-align:center;
+    padding:25px;
+}
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+/* ===== CARDS ===== */
+
+.card,
+.candidate-card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover,
+.candidate-card:hover{
+    transform:translateY(-5px);
+}
+
+/* ===== ANNOUNCEMENTS ===== */
+
+.announcements,
+.timeline,
+.results-section,
+.survey-section{
+    padding:20px;
+}
+
+/* ===== TABLES ===== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+table,
+th,
+td{
+    border:1px solid #ddd;
+}
+
+th{
+    background:#0066cc;
+    color:white;
+}
+
+th,
+td{
+    padding:12px;
+    text-align:center;
+}
+
+/* ===== SURVEY PAGE ===== */
+
+.survey-section form{
+    gap:20px;
+}
+
+/* ===== POLLS PAGE ===== */
+
+.polls-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+/* ===== VOTING PAGE ===== */
+
+.vote-container{
+    padding:20px;
+}
+
+.vote-container form{
+    gap:20px;
+}
+
+/* ===== CANDIDATES PAGE ===== */
+
+.candidate-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.candidate-card img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    display:block;
+    margin:0 auto 15px;
+}
+
+/* ===== RESULTS PAGE ===== */
+
+.winner-card{
+    background:#d4edda;
+    border-left:6px solid green;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+.progress{
+    width:100%;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:25px;
+    background:#28a745;
+    color:white;
+    text-align:center;
+    line-height:25px;
+}
+
+/* ===== CONTACT PAGE ===== */
+
+.contact-container{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+    padding:20px;
+}
+
+.contact-form,
+.contact-info{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ===== HERO SECTION (INDEX PAGE) ===== */
+
+.hero{
+    text-align: center;
+    padding:80px 10px;
+    background:linear-gradient(rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4)),
+    /*url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80");*/;
+    background-size:cover;
+    background-position:center;
+    color:black;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:768px){
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society Survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Society Survey Form</h1>
+    <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="survey.html">Survey</a></li>
+                    <li><a href="polls.html">Polls</a></li>
+                    <li><a href="vote.html">Vote</a></li>
+                    <li><a href="candidates.html">Candidates</a></li>
+                    <li><a href="result.html">Result</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+</header>
+
+<section class="survey-section">
+    <form>
+
+        <div class="card">
+            <h3>Cleanliness Satisfaction</h3>
+            <select required>
+                <option>Select Rating</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Average</option>
+                <option>Poor</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <h3>Security Service Feedback</h3>
+            <label><input type="radio" name="security"> Excellent</label>
+            <label><input type="radio" name="security"> Good</label>
+            <label><input type="radio" name="security"> Average</label>
+            <label><input type="radio" name="security"> Poor</label>
+        </div>
+
+        <div class="card">
+            <h3>Parking Issues</h3>
+            <label><input type="checkbox"> Lack of Space</label><br>
+            <label><input type="checkbox"> Unauthorized Parking</label><br>
+            <label><input type="checkbox"> Poor Markings</label>
+        </div>
+
+        <div class="card">
+            <h3>Water Supply Feedback</h3>
+            <select>
+                <option>Select Option</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Average</option>
+                <option>Poor</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <h3>Maintenance Quality</h3>
+            <label><input type="radio" name="maintenance"> Excellent</label>
+            <label><input type="radio" name="maintenance"> Good</label>
+            <label><input type="radio" name="maintenance"> Average</label>
+            <label><input type="radio" name="maintenance"> Poor</label>
+        </div>
+
+        <div class="card">
+            <h3>Suggestions Box</h3>
+            <textarea rows="5" placeholder="Enter your suggestions here"></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit Survey</button>
+
+    </form>
+</section>
+
+</body>
+</html>
