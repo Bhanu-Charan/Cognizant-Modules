@@ -1,0 +1,133 @@
+CREATE TABLE users (
+  userid INTEGER PRIMARY KEY,
+  fullname varchar(100) NOT NULL,
+  email varchar(100) unique,
+  city varchar(100) NOT NULL,
+  regdate date NOT Null
+);
+
+
+desc users;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| userid   | int          | NO   | PRI | NULL    |       |
+| fullname | varchar(100) | NO   |     | NULL    |       |
+| email    | varchar(100) | YES  | UNI | NULL    |       |
+| city     | varchar(100) | NO   |     | NULL    |       |
+| regdate  | date         | NO   |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+
+insert into users(userid,fullname,email,city,regdate) values (1,'Bhanu','bc@gmail.com','delhi','2026-05-20');
+insert into users(userid,fullname,email,city,regdate) values (2,'charan','c@gmail.com','chennai','2026-04-20');
+insert into users(userid,fullname,email,city,regdate) values (3,'vishal','v@gmail.com','noida','2026-05-24');
+insert into users(userid,fullname,email,city,regdate) values (4,'upender','up@gmail.com','delhi','2026-03-11');
+insert into users(userid,fullname,email,city,regdate) values (5,'surya','s@gmail.com','delhi','2026-05-16');
+insert into users(userid,fullname,email,city,regdate) values (6,'vikas','vi@gmail.com','mumbai','2026-04-28');
+insert into users(userid,fullname,email,city,regdate) values (7,'prem','p@gmail.com','mumbai','2026-05-07');
+insert into users(userid,fullname,email,city,regdate) values (8,'pavan','pa@gmail.com','mumbai','2026-05-23');
+insert into users(userid,fullname,email,city,regdate) values (9,'alice','al@gmail.com','mumbai','2026-02-13');
+insert into users(userid,fullname,email,city,regdate) values (10,'bob','bob@gmail.com','mumbai','2026-05-12');
+
+select * from users;
++--------+----------+---------------+---------+------------+
+| userid | fullname | email         | city    | regdate    |
++--------+----------+---------------+---------+------------+
+|      1 | Bhanu    | bc@gmail.com  | delhi   | 2026-05-20 |
+|      2 | charan   | c@gmail.com   | chennai | 2026-04-20 |
+|      3 | vishal   | v@gmail.com   | noida   | 2026-05-24 |
+|      4 | upender  | up@gmail.com  | delhi   | 2026-03-11 |
+|      5 | surya    | s@gmail.com   | delhi   | 2026-05-16 |
+|      6 | vikas    | vi@gmail.com  | mumbai  | 2026-04-28 |
+|      7 | prem     | p@gmail.com   | mumbai  | 2026-05-07 |
+|      8 | pavan    | pa@gmail.com  | mumbai  | 2026-05-23 |
+|      9 | alice    | al@gmail.com  | mumbai  | 2026-02-13 |
+|     10 | bob      | bob@gmail.com | mumbai  | 2026-05-12 |
++--------+----------+---------------+---------+------------+
+
+select * from users where regdate>=curdate()-INTERVAL 30 DAY;
++--------+----------+---------------+--------+------------+
+| userid | fullname | email         | city   | regdate    |
++--------+----------+---------------+--------+------------+
+|      1 | Bhanu    | bc@gmail.com  | delhi  | 2026-05-20 |
+|      3 | vishal   | v@gmail.com   | noida  | 2026-05-24 |
+|      5 | surya    | s@gmail.com   | delhi  | 2026-05-16 |
+|      7 | prem     | p@gmail.com   | mumbai | 2026-05-07 |
+|      8 | pavan    | pa@gmail.com  | mumbai | 2026-05-23 |
+|     10 | bob      | bob@gmail.com | mumbai | 2026-05-12 |
++--------+----------+---------------+--------+------------+
+
+select * from users order by regdate;
++--------+----------+---------------+---------+------------+
+| userid | fullname | email         | city    | regdate    |
++--------+----------+---------------+---------+------------+
+|      9 | alice    | al@gmail.com  | mumbai  | 2026-02-13 |
+|      4 | upender  | up@gmail.com  | delhi   | 2026-03-11 |
+|      2 | charan   | c@gmail.com   | chennai | 2026-04-20 |
+|      6 | vikas    | vi@gmail.com  | mumbai  | 2026-04-28 |
+|      7 | prem     | p@gmail.com   | mumbai  | 2026-05-07 |
+|     10 | bob      | bob@gmail.com | mumbai  | 2026-05-12 |
+|      5 | surya    | s@gmail.com   | delhi   | 2026-05-16 |
+|      1 | Bhanu    | bc@gmail.com  | delhi   | 2026-05-20 |
+|      8 | pavan    | pa@gmail.com  | mumbai  | 2026-05-23 |
+|      3 | vishal   | v@gmail.com   | noida   | 2026-05-24 |
++--------+----------+---------------+---------+------------+
+
+select city,count(*) as no_users from users GROUP BY city;
++---------+----------+
+| city    | no_users |
++---------+----------+
+| delhi   |        3 |
+| chennai |        1 |
+| noida   |        1 |
+| mumbai  |        5 |
++---------+----------+
+
+select city ,count(*) as total_users from users GROUP BY city having total_users>=5;
++--------+-------------+
+| city   | total_users |
++--------+-------------+
+| mumbai |           5 |
++--------+-------------+
+
+select * from users where fullname LIKE 'A%';
++--------+----------+--------------+--------+------------+
+| userid | fullname | email        | city   | regdate    |
++--------+----------+--------------+--------+------------+
+|      9 | alice    | al@gmail.com | mumbai | 2026-02-13 |
++--------+----------+--------------+--------+------------+
+
+select  city,count(*) as total_c from users GROUP BY city having total_c>1;
++--------+---------+
+| city   | total_c |
++--------+---------+
+| delhi  |       3 |
+| mumbai |       5 |
++--------+---------+
+
+
+select * from users where DAYOFWEEK(regdate) IN (1,7); 
++--------+----------+--------------+--------+------------+
+| userid | fullname | email        | city   | regdate    |
++--------+----------+--------------+--------+------------+
+|      3 | vishal   | v@gmail.com  | noida  | 2026-05-24 |
+|      5 | surya    | s@gmail.com  | delhi  | 2026-05-16 |
+|      8 | pavan    | pa@gmail.com | mumbai | 2026-05-23 |
++--------+----------+--------------+--------+------------+
+
+select * from users order by regdate limit 1;
++--------+----------+--------------+--------+------------+
+| userid | fullname | email        | city   | regdate    |
++--------+----------+--------------+--------+------------+
+|      9 | alice    | al@gmail.com | mumbai | 2026-02-13 |
++--------+----------+--------------+--------+------------+
+
+select MONTH(regdate) as month_no, count(*) as total_users from users group by month_no order by month_no;
++----------+-------------+
+| month_no | total_users |
++----------+-------------+
+|        2 |           1 |
+|        3 |           1 |
+|        4 |           2 |
+|        5 |           6 |
++----------+-------------+
