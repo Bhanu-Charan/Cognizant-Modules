@@ -1,0 +1,162 @@
+/* General */
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f8f9fa;
+}
+
+/* Navbar */
+
+.navbar-brand{
+    font-size:1.4rem;
+    font-weight:bold;
+}
+
+/* Hero Section */
+
+.hero{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1"); 
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    font-weight:bold;
+}
+
+.hero p{
+    font-size:1.2rem;
+}
+
+/* Cards */
+
+.card{
+    border:none;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    height:220px;
+    object-fit:cover;
+}
+
+/* Statistics Cards */
+
+.stats-card{
+    border-radius:15px;
+    text-align:center;
+}
+
+.stats-card h2{
+    font-weight:bold;
+}
+
+/* Tables */
+
+.table{
+    background:white;
+}
+
+/* Profile Card */
+
+.profile-card{
+    border-radius:20px;
+}
+
+.profile-card img{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border:4px solid #0d6efd;
+}
+
+/* Contact Form */
+
+form{
+    padding:10px;
+}
+
+/* Accordion */
+
+.accordion-button:not(.collapsed){
+    background:#0d6efd;
+    color:white;
+}
+
+/* Footer */
+
+footer{
+    margin-top:50px;
+}
+
+footer a{
+    text-decoration:none;
+}
+
+/* Carousel */
+
+.carousel img{
+    height:500px;
+    object-fit:contain;
+}
+
+/* Buttons */
+
+.btn{
+    border-radius:8px;
+}
+
+/* Mobile */
+
+@media(max-width:576px){
+
+    .hero{
+        min-height:60vh;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .carousel img{
+        height:250px;
+    }
+
+    .profile-card img{
+        width:120px;
+        height:120px;
+    }
+}
+
+/* Tablet */
+
+@media(min-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+}
+
+/* Desktop */
+
+@media(min-width:992px){
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+}

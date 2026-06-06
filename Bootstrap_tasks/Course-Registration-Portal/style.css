@@ -1,0 +1,62 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+.hero{
+    background: linear-gradient(rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)),
+    url("https://img.magnific.com/free-photo/abstract-background-with-patterned-glass-texture_53876-125881.jpg?semt=ais_hybrid&w=740&q=80");
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+}
+
+.hero h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.carousel-item img{
+    height: 500px;
+    object-fit: cover;
+}
+
+.card img{
+    height: 220px;
+    object-fit: contain;
+}
+
+.card{
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+footer{
+    margin-top: 30px;
+}
+
+.map-box{
+    height: 250px;
+    background: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 10px;
+    color: #555;
+}
+
+.navbar-brand{
+    font-weight: bold;
+}
+
+.btn{
+    border-radius: 8px;
+}
+
+section{
+    overflow: hidden;
+}
