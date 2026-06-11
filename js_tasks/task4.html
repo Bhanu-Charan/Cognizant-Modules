@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functions Example</title>
+</head>
+<body>
+
+    <h2>Functions Demo</h2>
+
+    <button onclick="registerUser('Music Fest')">
+        Register
+    </button>
+
+    <script>
+        let events = [];
+
+        function addEvent(name, category) {
+            events.push({name, category});
+        }
+
+        function registerUser(eventName) {
+            alert("Registered for " + eventName);
+        }
+
+        function filterEventsByCategory(category, callback) {
+
+            let result = events.filter(function(event) {
+                return event.category === category;
+            });
+
+            callback(result);
+        }
+
+        function counter() {
+
+            let count = 0;
+
+            return function() {
+                count++;
+                return count;
+            };
+        }
+
+        let registrationCount = counter();
+
+        addEvent("Music Fest", "Entertainment");
+        addEvent("Tech Workshop", "Education");
+
+        console.log(registrationCount());
+        console.log(registrationCount());
+
+        filterEventsByCategory("Education", function(data) {
+            console.log(data);
+        });
+    </script>
+
+</body>
+</html>

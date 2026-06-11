@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Objects Example</title>
+</head>
+<body>
+
+    <h2>Event Object Demo</h2>
+
+    <button onclick="event1.register()">
+        Register
+    </button>
+
+    <script>
+        function Event(name, category, seats) {
+
+            this.name = name;
+            this.category = category;
+            this.seats = seats;
+        }
+
+        Event.prototype.register = function() {
+
+            if(this.seats > 0) {
+
+                this.seats--;
+
+                alert("Registered for " + this.name);
+
+                console.log("Seats Left: " + this.seats);
+            }
+        };
+
+        let event1 = new Event(
+            "Music Fest",
+            "Entertainment",
+            50
+        );
+
+        console.log(event1);
+    </script>
+
+</body>
+</html>

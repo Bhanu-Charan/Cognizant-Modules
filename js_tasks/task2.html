@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>"community portal</title>
+    </head>
+    <body>
+        <h1>Event portal</h1>
+        <p id="Event Info"></p>
+        <script>
+            const eventname="Music fest";
+            const eventdate="09-06-2026"
+            let seats=50;
+
+            let info=`Event: ${eventname}, Date: ${eventdate}, Seats: ${seats}`;
+            document.getElementById("Event Info").innerHTML=info;
+            seats--;
+            console.log("Remaining seats: "+seats);
+        </script>
+    </body>
+</html>

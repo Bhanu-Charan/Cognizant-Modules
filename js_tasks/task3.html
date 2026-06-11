@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>community portal</title>
+    </head>
+    <body>
+        <h1>Event portal</h1>
+        <ul id="eventlist"></ul>
+        <script>
+            const events=[
+                {name:"Music Fest",seats:10,upcoming:true},
+                {name:"Tech Workshop",seats:20,upcoming:true},
+                {name:"Science Expo",seats:100,upcoming:false}
+            ];
+
+            events.forEach(function(event){
+                if(event.upcoming==false && event.seats>0){
+                    let li=document.createElement("li");
+                    li.innerHTML=event.name;
+
+                    document.getElementById("eventlist").appendChild(li);
+                }
+            });
+
+            try{
+                let seats=0;
+                if(seats<=0){
+                    throw "No seats available"
+                }
+            }
+            catch(error){
+                console.log(error);
+            }
+        </script>
+    </body>
+</html>
